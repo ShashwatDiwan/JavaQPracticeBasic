@@ -19,8 +19,12 @@ class MyCalculator{
         else if (n==0 && p==0)
             throw new Exception("Both n and p cannot be zero");
 
-        else
+        else {
             System.out.println("Valid Input...");
+            for(int i=0;i<p;i++){
+                product = product * n;
+            }
+        }
 
 
         return product;
