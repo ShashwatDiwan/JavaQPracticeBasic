@@ -5,7 +5,7 @@ Each shape has different methods to calculate its area and perimeter.
 
 package QuestionBank;
 
-import org.w3c.dom.ls.LSOutput;
+//Redo this program and take input from the user
 
 abstract class Shape{
     final double pie = 3.14;
