@@ -101,6 +101,8 @@ class Student{
                  System.out.print("Choose an option: ");
                  int choice = sc.nextInt();
 
+                 sc.nextLine();
+
                  switch (choice) {
                      case 1:
                          // Adding a student
@@ -108,6 +110,7 @@ class Student{
                          String name = sc.nextLine();
                          System.out.println("Enter roll number: ");
                          int rollNumber = sc.nextInt();
+                         sc.nextLine();
                          System.out.print("Enter grade: ");
                          String grade = sc.next();
                          studentManager.addStudent(name, rollNumber, grade);
