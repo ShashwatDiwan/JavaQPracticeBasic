@@ -1,53 +1,66 @@
-
 package QuestionBank_24;
 
-class inventoryItem{
+class InventoryItem {
     String name;
-    static int itemID = 100;
+    int itemID;  // Instance variable to store unique itemID for each object
+    static int nextID = 100;  // Static counter to generate unique IDs, starting from 100
 
-    inventoryItem(String name){
+    // Constructor to initialize name and assign unique itemID
+    InventoryItem(String name) {
         this.name = name;
+        this.itemID = nextID++;  // Assign current value, then increment
     }
 
-    public void displayInfo(){
-        System.out.println("Product Name : " + name + "Product Id : " + itemID + "D");
+    // Method to display basic product information
+    public void displayInfo() {
+        System.out.println("Product Name: " + name + "\nProduct ID: D" + itemID);
     }
-
 }
 
-class Electronics extends inventoryItem{
+class Electronics extends InventoryItem {
     int warrantyPeriod;
-    Electronics(String name,int warrantyPeriod){
-        super(name);
+
+    // Constructor for Electronics with warrantyPeriod
+    Electronics(String name, int warrantyPeriod) {
+        super(name);  // Call the base class constructor
         this.warrantyPeriod = warrantyPeriod;
-        inventoryItem.itemID++;
     }
 
+    // Override displayInfo() to include warrantyPeriod
     @Override
-    public void displayInfo(){
-        System.out.println("\nProduct name : "+ name + " \nItemID : D" + itemID + "\nWarranty Period : " + warrantyPeriod);
+    public void displayInfo() {
+        System.out.println("\nProduct Name: " + name +
+                "\nItem ID: D" + itemID +
+                "\nWarranty Period: " + warrantyPeriod + " months");
     }
 }
 
-class Clothing extends inventoryItem{
+class Clothing extends InventoryItem {
     String size;
-    Clothing(String name,String size){
-        super(name);
+
+    // Constructor for Clothing with size
+    Clothing(String name, String size) {
+        super(name);  // Call the base class constructor
         this.size = size;
-        inventoryItem.itemID++;
     }
+
+    // Override displayInfo() to include size
     @Override
-    public void displayInfo(){
-        System.out.println("\nProduct name : "+ name + "\nItemID : D" + itemID + "\nProduct size : " + size);
+    public void displayInfo() {
+        System.out.println("\nProduct Name: " + name +
+                "\nItem ID: D" + itemID +
+                "\nSize: " + size);
     }
 }
 
 public class InventoryManagementSystem {
     public static void main(String[] args) {
-        inventoryItem item1 = new Electronics("Mic",12);
-        item1.displayInfo();
+        // Create Electronics object
+        InventoryItem item1 = new Electronics("Mic", 12);
+        item1.displayInfo();  // Should display ID as D100
 
-        inventoryItem item2 = new Clothing("Shirt","S");
-        item2.displayInfo();
+        // Create Clothing object
+        InventoryItem item2 = new Clothing("Shirt", "S");
+        item2.displayInfo();  // Should display ID as D101
     }
 }
