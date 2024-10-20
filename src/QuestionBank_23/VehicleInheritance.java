@@ -3,7 +3,7 @@
  Inherit the Vehicle class into subclasses named Bus and Car having individual private instance variables routeNumber in Bus and
  manufacturerName in Car and both of them having showData ( ) method showing all details of Bus and
  Car respectively with content of the super class’s showData ( ) method.*/
-package QuestionBank;
+package QuestionBank_23;
 
 class Vehicles{
     protected  String regnNumber;
